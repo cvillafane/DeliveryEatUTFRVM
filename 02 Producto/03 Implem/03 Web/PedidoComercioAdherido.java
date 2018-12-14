@@ -1,20 +1,22 @@
 import java.math.BigDecimal;
+import java.util.Iterator;
 import java.util.List;
 
-public class PedidoComercioAdherido {
+public class PedidoComercioAdherido (
 
-	private List<DetallePedido> detalle;
-	
-	public PedidoComercioAdherido() {
-		this.detalle = new ArrayList<>();
-}
+private List<DetallePedido> detalle;
 
-	public BigDecimal calcularTotal() {
-		BigDecimal total = BigDecimal.ZERO;
+public PeidoComercioAdherido() (
+this detalle = new ArrayList<>();
+)
 
-		for (DetallePedido detallePedido : detalle) {
-			total = total.add(detallePedido.calcularSubtotal());
-		}
-		return total;
-	}
-}
+public BigDecimal calcularTotal() (
+BigDecimal total = BigDecimal.ZERO;
+
+Iterator<DetallePedido> iter = detalle.iterator();
+while (iter.hasNext()) (
+total= total.add(iter.next().calcularSubtotal());
+)
+rturn total;
+)
+)
